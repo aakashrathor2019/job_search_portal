@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <h2>{% trans "Sign In Via GitHub" %}</h2>
+    <p>{% trans "You are about to sign in using a third-party account from GitHub." %}</p>
+
+    <form method="post" action="{% url 'socialaccount_login' 'github' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">{% trans "Continue" %}</button>
+    </form>
+</div>
+{% endblock %}
